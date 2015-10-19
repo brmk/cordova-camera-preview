@@ -1,0 +1,36 @@
+<head>
+    <title>cordova-camera</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+</head>
+<body>
+  {{> hello}}
+</body>
+<template name="hello">
+    <div class="app">
+        <h1>Apache Cordova</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+        <h2> Camera Position </h2>
+        <input type="radio" class="deviceposition" name="deviceposition" id="deviceposition_back" value="Back" />
+        <label for="deviceposition_back">Back</label>
+        <br/>
+        <input type="radio" class="deviceposition" name="deviceposition" id="deviceposition_front" value="Front"/>
+        <label for="deviceposition_front">Front</label>
+        <h2> Flash Mode </h2>
+        <input type="radio" class="flashmode" name="flashmode" id="flashmode_off" value="Off" />
+        <label for="flashmode_off">Off</label>
+        <br/>
+        <input type="radio" class="flashmode" name="flashmode" id="flashmode_on" value="On" />
+        <label for="flashmode_on">On</label>
+        <br/>
+        <input type="radio" class="flashmode" name="flashmode" id="flashmode_auto" value="Auto" />
+        <label for="flashmode_auto">Auto</label>
+        <br/>
+        <input type="button" id="capture" value="Take a picture"  />
+        {{status}}
+        <button id="start">Open camera</button>
+    </div>
+    <canvas id="camera" width="352" height="288" style="border:2px"></canvas>
+</template>
