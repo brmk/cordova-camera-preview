@@ -54,6 +54,7 @@ cordova.define("cordova/plugin/CanvasCamera", function(require, exports, module)
                 //
                 _this._context.restore();
             }
+            console.log("Canvas camera initialized!");
         };
 
         // register orientation change event
@@ -63,12 +64,14 @@ cordova.define("cordova/plugin/CanvasCamera", function(require, exports, module)
 
 
     CanvasCamera.prototype.start = function(options) {
+        console.log("CanvasCamera started");
         cordova.exec(false, false, "CanvasCamera", "startCapture", [options]);
     };
 
 
 
     CanvasCamera.prototype.capture = function(data) {
+        console.log("Captured");
         this._camImage.src = data;
     };
 
@@ -112,6 +115,7 @@ cordova.define("cordova/plugin/CanvasCamera", function(require, exports, module)
     };
 
     CanvasCamera.prototype.takePicture = function(onsuccess) {
+        console.log("called takePicture")
         cordova.exec(onsuccess, function(){}, "CanvasCamera", "captureImage", []);
     };
 

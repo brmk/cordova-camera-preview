@@ -24,9 +24,11 @@ Template.hello.helpers({
     }
 })
 Template.hello.events({
-  "click #start":function(){
+  "click #initialize":function(){
     canvasMain = document.getElementById("camera");
     CanvasCamera.initialize(canvasMain);
+  },
+  "click #start":function(){
     var opt = {
         quality: 75,
         destinationType: CanvasCamera.DestinationType.DATA_URL,
